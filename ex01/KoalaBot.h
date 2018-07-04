@@ -2,30 +2,27 @@
 #define _KOALABOT_H_
 
 #include <iostream>
-#include <string>
+#include <cctype>
 #include "Parts.h"
 
 class KoalaBot
 {
-  std::string		serial;
-  Arms			arms;
-  Legs			legs;
-  Head			head;
-
- public:
-  KoalaBot(std::string seraial = "Bob-01");
-  ~KoalaBot();
-
-  void		setParts(Arms &arms);
-  void		setParts(Legs &legs);
-  void		setParts(Head &head);
-
-  void		swapParts(Arms &arms);
-  void		swapParts(Legs &legs);
-  void		swapParts(Head &head);
-
-  void		informations() const;
-  bool		status() const;
+	public:
+		KoalaBot(const std::string &serial = "Bob-01");
+		~KoalaBot();
+		void setParts(Arms& _arms);
+		void setParts(Legs& _legs);
+		void setParts(Head& _head);
+		void swapParts(Arms& _arms);
+		void swapParts(Legs& _legs);
+		void swapParts(Head& _head);
+		void informations() const;
+		bool status() const;
+	private:
+		std::string _serial;
+		Arms _arms;
+		Legs _legs;
+		Head _head;
 };
 
 #endif

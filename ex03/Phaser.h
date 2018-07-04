@@ -1,28 +1,33 @@
+#ifndef PHASER_H_
+#define PHASER_H_
 
-# define PHASER_H
+#include <string>
+#include <iostream>
+#include <queue>
 
-class Phaser{
- public:
-    enum AmmoType
-    {REGULAR, PLASMA, ROCKET};
- public:
-    Phaser(int maxAmmo = 20, AmmoType type = REGULAR);
-    ~Phaser(){};
-    public:
-    void fire();
-    void ejectClip();
-    void changeType(AmmoType newType);
-    void reload();
-    void addAmmo(AmmoType type);
- public:
-    int getCurrentAmmos() const;
- private:
-    static const int Empty = 0;
- private:
-    //    int _total;
-    int _maxAmmo;
-    int _magazine[3];
-    AmmoType _cur;
+class Phaser {
+public:
+	enum AmmoType {
+		REGULAR,
+		PLASMA,
+		ROCKET
+	};
+
+	Phaser(int maxAmmo = 20, AmmoType type = REGULAR);
+	~Phaser();
+
+	void fire();
+	void ejectClip();
+	void changeType(AmmoType newType);
+	void reload();
+	void addAmmo(AmmoType type);
+
+	int getCurrentAmmos() const;
+
+private:
+	int _maxAmmo;
+	AmmoType _defaultType;
+	std::queue<AmmoType> _ammos;
 };
-#endif
 
+#endif

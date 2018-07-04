@@ -1,80 +1,112 @@
-#include <iostream>
-#include <string>
 #include "Parts.h"
 
-Arms::Arms(std::string serial, bool functionnal)
+Arms::Arms(const std::string &serial, bool functional)
 {
-  this->_serial = serial;
-  this->_functionnal = functionnal;
+	this->_serial = serial;
+	this->_functional = functional;
 }
 
 Arms::~Arms()
 {
-}
-
-std::string Arms::serial() const
-{
-  return this->_serial;
+	
 }
 
 bool Arms::isFunctionnal() const
 {
-  return this->_functionnal;
+	return (this->_functional);
 }
 
-void	Arms::informations() const
+std::string	Arms::serial() const
 {
-  std::cout << "\t[Parts] Arms " << this->_serial << " status : " << (this->_functionnal ? "OK" : "KO") << std::endl;
+	return (this->_serial);
 }
 
-
-Legs::Legs(std::string serial, bool functionnal)
+void Arms::informations() const
 {
-  this->_serial = serial;
-  this->_functionnal = functionnal;
+	std::cout << "\t[Parts] Arms ";
+	std::cout << this->_serial;
+	std::cout << " ";
+	std::cout << "status : ";
+	if (this->_functional == true) 
+	{
+		std::cout << "OK\n";
+	}
+	else 
+	{
+		std::cout << "KO\n";
+	}
 }
 
-Legs::~Legs()
+Legs::Legs(const std::string &serial, bool functional)
 {
+	this->_serial = serial;
+	this->_functional = functional;
 }
 
-std::string Legs::serial() const
+bool	Legs::isFunctionnal() const
 {
-  return this->_serial;
+	return (this->_functional);
 }
 
-bool Legs::isFunctionnal() const
+std::string	Legs::serial() const
 {
-  return this->_functionnal;
+	return (this->_serial);
 }
 
 void	Legs::informations() const
 {
-  std::cout << "\t[Parts] Legs " << this->_serial << " status : " << (this->_functionnal ? "OK" : "KO") << std::endl;
+	std::cout << "\t[Parts] Legs ";
+	std::cout << this->_serial;
+	std::cout << " ";
+	std::cout << "status : ";
+	if (this->_functional == true) 
+	{
+		std::cout << "OK\n";
+	}
+	else 
+	{
+		std::cout << "KO\n";
+	}
 }
 
-
-Head::Head(std::string serial, bool functionnal)
+Legs::~Legs()
 {
-  this->_serial = serial;
-  this->_functionnal = functionnal;
+	
 }
 
-Head::~Head()
+Head::Head(const std::string &serial, bool functional)
 {
-}
-
-std::string Head::serial() const
-{
-  return this->_serial;
+	this->_serial = serial;
+	this->_functional = functional;
 }
 
 bool Head::isFunctionnal() const
 {
-  return this->_functionnal;
+	return (this->_functional);
 }
 
-void	Head::informations() const
+std::string	Head::serial() const
 {
-  std::cout << "\t[Parts] Head " << this->_serial << " status : " << (this->_functionnal ? "OK" : "KO") << std::endl;
+	return (this->_serial);
+}
+
+void Head::informations() const
+{
+	std::cout << "\t[Parts] Head ";
+	std::cout << this->_serial;
+	std::cout << " ";
+	std::cout << "status : ";
+	if (this->_functional == true) 
+	{
+		std::cout << "OK\n";
+	}
+	else 
+	{
+		std::cout << "KO\n";
+	}
+}
+
+Head::~Head()
+{
+	
 }
