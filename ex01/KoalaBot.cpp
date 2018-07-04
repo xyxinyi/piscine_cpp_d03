@@ -46,7 +46,7 @@ void KoalaBot::informations() const
 bool KoalaBot::status() const
 {
 	return (this->_arms.isFunctionnal() &&
-	 this->_legs.isFunctionnal() && this->_head.isFunctionnal());
+	this->_legs.isFunctionnal() && this->_head.isFunctionnal());
 }
 
 KoalaBot::~KoalaBot()
