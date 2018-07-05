@@ -1,46 +1,46 @@
-#ifndef _PARTS_H_
-#define _PARTS_H_
+#ifndef PARTS_H
+#define PARTS_H
 
 #include <iostream>
-#include <cctype>
+#include <string>
 
 class Arms
 {
-	public:
-		Arms(const std::string &serial = "A-01", bool functional = true);
-		~Arms();
-		bool isFunctionnal() const;
-		std::string serial() const;
-		void informations() const;
-	private:
-		std::string _serial;
-		bool _functional;
+private:
+	std::string _serial;
+	bool _functionnal;
+public:
+	Arms(std::string const serial = "A-01", bool functionnal = true);
+	~Arms();
+	bool isFunctionnal() const;
+	std::string serial() const;
+	void informations() const;
 };
 
 class Legs
 {
-	public:
-		Legs(const std::string &serial = "L-01", bool functional = true);
-		~Legs();
-		bool isFunctionnal() const;
-		std::string serial() const;
-		void informations() const;
-	private:
-		std::string _serial;
-		bool _functional;
+private:
+	std::string _serial;
+	bool _functionnal;
+public:
+	Legs(std::string const serial = "L-01", bool functionnal = true);
+	~Legs();
+	bool isFunctionnal() const;
+	std::string serial() const;
+	void informations() const;
 };
 
 class Head
 {
-	public:
-		Head(const std::string &serial = "H-01", bool functional = true);
-		~Head();
-		bool isFunctionnal() const;
-		std::string serial() const;
-		void informations() const;
-	private:
-		std::string _serial;
-		bool _functional;
+private:
+	std::string _serial;
+	bool _functionnal;
+public:
+	Head(std::string const serial = "H-01", bool functionnal = true);
+	~Head();
+	bool isFunctionnal() const;
+	std::string serial() const;
+	void informations() const;
 };
 
 #endif
